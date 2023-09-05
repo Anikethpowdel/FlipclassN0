@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#CEDEBD"
+    android:backgroundTint="#CEDEBD">
+
+    <TextView
+        android:id="@+id/no_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Internet !! Please Retry"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+    <ImageView
+        android:id="@+id/no_wifi"
+        android:visibility="gone"
+        android:layout_width="105dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img"
+        android:layout_below="@id/no_internet"
+        android:layout_centerHorizontal="true" />
+
+    <!-- New TextView and ImageView added below -->
+
+
+    <!-- The rest of your layout code (LinearLayout, RecyclerView, ProgressBar) goes here -->
+
+    <LinearLayout
+        android:id="@+id/idLLsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <!--edit text for getting the search
+            query for book from user-->
+
+        <!--image button for our search button -->
+        <EditText
+            android:id="@+id/idEdtSearchBooks"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_weight="4" />
+
+        <ImageButton
+            android:id="@+id/idBtnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/no_search"
+            android:backgroundTint="#5B9A8B"/>
+
+    </LinearLayout>
+
+    <!--recycler view for displaying our list of books-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVBooks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idLLsearch" />
+
+    <!--progressbar for displaying our loading indicator-->
+    <ProgressBar
+        android:id="@+id/idLoadingPB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
